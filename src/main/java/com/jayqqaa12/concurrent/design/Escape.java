@@ -9,5 +9,17 @@ import com.jayqqaa12.NotThreadSafe;
  */
 @NotThreadSafe
 public class Escape {
+  
+   private String[] status =new String[]{
+  	"OPEN","COLSE"
+  };
+
+
+  public String[] getStatus(){
+
+  	return status;
+  }
+
+
 
 }

@@ -9,6 +9,17 @@ import com.jayqqaa12.ThreadSafe;
 @ThreadSafe
 public class ThreadConfinement {
 
+  private String[] status =new String[]{
+  	"OPEN","COLSE"
+  };
+
+
+  public String[] getStatus(){
+
+  	return status;
+  }
+
+
 
 
 }

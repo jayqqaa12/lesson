@@ -24,7 +24,6 @@ public class Visibility {
 
     }
 
-
     public static void main(String[] args) {
 
         new Thread(() -> exec()).start();
@@ -32,6 +31,4 @@ public class Visibility {
         status = true;
         i = 99;
     }
-
-
 }
