@@ -1,14 +1,14 @@
 package com.jayqqaa12.concurrent;
 
 /**
- * 计数器
+ * 有序性问题
  * <p>
  * Created by 12 on 2017/8/15.
  */
 @NotThreadSafe
-public class Counter {
+public class Order {
 
-    private int c = 0;
+    private volatile int c = 0;
 
     public void incr() {
         c++;
