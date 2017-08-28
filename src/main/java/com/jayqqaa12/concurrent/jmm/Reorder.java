@@ -1,5 +1,8 @@
 package com.jayqqaa12.concurrent.jmm;
 
+import com.jayqqaa12.concurrent.NotThreadSafe;
+
+@NotThreadSafe
 public class Reorder {
     int a = 0;
     boolean flag = false;

@@ -1,6 +1,6 @@
 package com.jayqqaa12.concurrent.design;
 
-import com.jayqqaa12.ThreadSafe;
+import com.jayqqaa12.concurrent.ThreadSafe;
 
 
 /**
@@ -49,12 +49,6 @@ public class SynchronizedRGB {
         return name;
     }
 
-    public synchronized void invert() {
-        red = 255 - red;
-        green = 255 - green;
-        blue = 255 - blue;
-        name = "Inverse of " + name;
-    }
 
     public static void main(String[] args) {
 

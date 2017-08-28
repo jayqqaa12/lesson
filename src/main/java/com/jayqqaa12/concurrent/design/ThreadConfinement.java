@@ -1,6 +1,6 @@
 package com.jayqqaa12.concurrent.design;
 
-import com.jayqqaa12.ThreadSafe;
+import com.jayqqaa12.concurrent.ThreadSafe;
 
 /**
  * 线程封闭

@@ -1,7 +1,7 @@
 package com.jayqqaa12.concurrent.jmm;
 
-import com.jayqqaa12.NotThreadSafe;
-import com.jayqqaa12.ThreadSafe;
+import com.jayqqaa12.concurrent.NotThreadSafe;
+import com.jayqqaa12.concurrent.ThreadSafe;
 
 /**
  * Created by 12 on 2017/8/19.

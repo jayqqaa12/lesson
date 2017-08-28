@@ -1,4 +1,4 @@
-package com.jayqqaa12;
+package com.jayqqaa12.concurrent;
 
 /**
  * Created by 12 on 2017/8/15.

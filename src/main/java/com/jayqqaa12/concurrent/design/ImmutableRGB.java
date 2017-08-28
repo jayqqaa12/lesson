@@ -1,7 +1,7 @@
 package com.jayqqaa12.concurrent.design;
 
 
-import com.jayqqaa12.ThreadSafe;
+import com.jayqqaa12.concurrent.ThreadSafe;
 
 /**
  * 不可变对象
@@ -45,10 +45,5 @@ final public class ImmutableRGB {
         return name;
     }
 
-    public ImmutableRGB invert() {
-        return new ImmutableRGB(255 - red,
-                       255 - green,
-                       255 - blue,
-                       "Inverse of " + name);
-    }
+
 }

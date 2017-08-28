@@ -1,7 +1,5 @@
 package com.jayqqaa12.concurrent;
 
-import com.jayqqaa12.NotThreadSafe;
-
 /**
  * 计数器
  * <p>
