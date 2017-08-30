@@ -1,7 +1,7 @@
 package com.jayqqaa12.concurrent.design;
 
 
-import com.jayqqaa12.concurrent.ThreadSafe;
+import com.jayqqaa12.ThreadSafe;
 
 /**
  * 不可变对象

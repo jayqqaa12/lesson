@@ -1,5 +1,7 @@
 package com.jayqqaa12.jdk.func;
 
+import com.jayqqaa12.model.User;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -8,23 +10,6 @@ import java.util.function.Predicate;
 import static java.util.stream.Collectors.toList;
 
 public class FunctionTest {
-    static class User {
-        private String name;
-        private String password;
-
-        public User(String name, String password) {
-            this.name = name;
-            this.password = password;
-        }
-
-        public String getName() {
-            return name;
-        }
-        public String getPassword() {
-            return password;
-        }
-
-    }
 
     public static void main(String[] args) {
         //初始化数据
@@ -67,7 +52,7 @@ public class FunctionTest {
 
 
     public static <R> List<R> getList(List<User> userList, Predicate<User> filter, Function<User, R> extractor) {
- 
+
         return userList.stream().filter(user -> filter.test(user)).map(user -> extractor.apply(user)).collect(toList());
     }
 }

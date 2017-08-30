@@ -1,4 +1,5 @@
-package com.jayqqaa12.concurrent.design;
+package com.jayqqaa12.concurrent.design.escape;
+
 
 import com.jayqqaa12.ThreadSafe;
 

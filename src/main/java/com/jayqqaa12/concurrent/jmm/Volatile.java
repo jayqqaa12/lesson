@@ -1,6 +1,6 @@
 package com.jayqqaa12.concurrent.jmm;
 
-import com.jayqqaa12.concurrent.ThreadSafe;
+import com.jayqqaa12.ThreadSafe;
 
 
 /**

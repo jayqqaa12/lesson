@@ -1,5 +1,7 @@
 package com.jayqqaa12.concurrent;
 
+import com.jayqqaa12.NotThreadSafe;
+
 /**
  * 有序性问题
  * <p>

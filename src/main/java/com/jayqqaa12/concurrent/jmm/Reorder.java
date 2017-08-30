@@ -1,7 +1,12 @@
 package com.jayqqaa12.concurrent.jmm;
 
-import com.jayqqaa12.concurrent.NotThreadSafe;
+import com.jayqqaa12.NotThreadSafe;
 
+
+/**
+ * 指令重排
+ *
+ */
 @NotThreadSafe
 public class Reorder {
     int a = 0;

@@ -1,21 +1,19 @@
 package com.jayqqaa12.jdk.func;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
 public class ConsumerTest {
 
-    static class PhoneMessage implements Consumer<String > {
-        private AtomicInteger num = new AtomicInteger(0);
+    static class PhoneMessage implements Consumer<String> {
         @Override
         public void accept(String s) {
             System.out.println(s);
         }
     }
+
     public static void main(String[] args) {
         String name = "name";
         String password = "password";
-
 
         //java.util.function.Consumer 输入<T>，没有return
         Consumer<String> messageConsumer = message -> System.out.println("----messageConsumer-----" + message);
@@ -29,8 +27,8 @@ public class ConsumerTest {
         //1. 直接输入，没有输出
         messageConsumer.accept(name + i++);
         //2. 如果执行messageConsumer.accept(password)，没有异常情况就执行afterConsumer.accept(passowrd)
-        messageConsumer.andThen(afterConsumer).accept(password+ i++);
+        messageConsumer.andThen(afterConsumer).accept(password + i++);
         //3. exceptionConsumer.accept(password)，异常情况就不执行afterConsumer.accept(passowrd)
-        exceptionConsumer.andThen(afterConsumer).accept(password+ i++);
+        exceptionConsumer.andThen(afterConsumer).accept(password + i++);
     }
 }

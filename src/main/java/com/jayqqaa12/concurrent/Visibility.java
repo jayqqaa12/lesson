@@ -1,6 +1,6 @@
-package com.jayqqaa12.concurrent.design;
+package com.jayqqaa12.concurrent;
 
-import com.jayqqaa12.concurrent.NotThreadSafe;
+import com.jayqqaa12.NotThreadSafe;
 
 /**
  * 可见性问题
