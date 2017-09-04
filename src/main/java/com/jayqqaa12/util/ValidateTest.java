@@ -1,8 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2005, 2014 springside.github.io
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- *******************************************************************************/
 package com.jayqqaa12.util;
 
 import static org.assertj.core.api.Assertions.*;
@@ -17,7 +12,6 @@ import com.google.common.collect.Lists;
 /**
  * 演示用Apache Commons3的Validate，在代码中进行防御性校验.
  * 
- * @author calvin
  */
 public class ValidateTest {
 

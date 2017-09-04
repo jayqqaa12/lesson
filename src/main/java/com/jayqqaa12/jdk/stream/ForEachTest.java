@@ -12,7 +12,7 @@ import static java.util.Arrays.asList;
  *
  * Created by 12 on 2017/8/30.
  */
-public class ForEach {
+public class ForEachTest {
 
     private List<User> persons = asList(new User("Joe"), new User("Jim"), new User("John"));
 
@@ -29,6 +29,7 @@ public class ForEach {
     @Test
     public void lambda() {
         persons.forEach(p -> p.setPassword("Doe"));
+
     }
 
 
