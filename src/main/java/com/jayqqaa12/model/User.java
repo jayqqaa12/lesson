@@ -1,6 +1,6 @@
 package com.jayqqaa12.model;
 
-public class User  {
+public class User  implements  Comparable {
     private String name;
     private String password;
 
@@ -50,4 +50,8 @@ public class User  {
         this.age = age;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

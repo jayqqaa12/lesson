@@ -5,11 +5,7 @@ import com.jayqqaa12.model.Clazz;
 import com.jayqqaa12.model.User;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -18,6 +14,8 @@ import static java.lang.System.out;
 
 /**
  * Created by 12 on 2017/9/2.
+ *
+ * 注意stream 只能运行一次 否则会报错
  */
 public class StreamTest {
 
@@ -48,6 +46,10 @@ public class StreamTest {
     @Test
     public void sort() {
         Stream stream = personStream.sorted();
+
+        stream=personStream.sorted(Comparator.naturalOrder());
+        stream=personStream.sorted(Comparator.reverseOrder());
+
     }
 
 
@@ -145,12 +147,6 @@ public class StreamTest {
 
     }
 
-
-    @Test
-    public void collect() {
-
-        List<User> adultList = personStream.filter(p -> p.getAge() > 18).collect(Collectors.toList());
-    }
 
     @Test
     public void parallel() {

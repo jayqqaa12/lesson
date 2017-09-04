@@ -1,5 +1,7 @@
 package com.jayqqaa12.jdk.func;
 
+import org.junit.Test;
+
 import java.util.Optional;
 
 /**
@@ -7,17 +9,18 @@ import java.util.Optional;
  */
 public class OptionalTest {
 
-    boolean checkNotNull(Object obj) {
-        return null == obj ? false : true;
-    }
-
-    // 打印并截取str[5]之后的字符串
     private static String print(String str) {
         System.out.println(str);
         return str.substring(6);
     }
 
-    public static void main(String[] args) {
+    boolean checkNotNull(Object obj) {
+        return null == obj ? false : true;
+    }
+
+
+    @Test
+    public void test() {
         final String text = "Hallo world!";
         Optional.ofNullable(text)//显示创建一个Optional壳
                 .map(OptionalTest::print)
@@ -26,7 +29,6 @@ public class OptionalTest {
         Optional.ofNullable(text)
                 .map(OptionalTest::print)
                 .map(s -> null)//返回 null
-
                 .ifPresent(System.out::println);
     }
 }
