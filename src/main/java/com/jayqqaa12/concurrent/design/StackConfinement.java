@@ -17,6 +17,7 @@ public class StackConfinement {
 
 
     public int load(Collection<User> users) {
+        int i=0;
         Set<User> userSet = new TreeSet<>(users);
         load2(userSet);
 

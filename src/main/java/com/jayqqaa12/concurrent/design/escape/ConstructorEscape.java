@@ -9,22 +9,22 @@ import com.jayqqaa12.NotThreadSafe;
  *
  */
 @NotThreadSafe
-public class ThisEscape {
+public class ConstructorEscape {
     private Thread t;
 
-    public ThisEscape() {
+    public ConstructorEscape() {
 
         System.out.println(this);
 
         t = new Thread() {
             public void run() {
-                System.out.println(ThisEscape.this);
+                System.out.println(ConstructorEscape.this);
             }
         };
         t.start();
     }
 
     public static void main(String[] args) {
-        ThisEscape a = new ThisEscape();
+        ConstructorEscape a = new ConstructorEscape();
     }
 }  
