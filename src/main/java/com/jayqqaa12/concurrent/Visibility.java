@@ -28,7 +28,7 @@ public class Visibility {
 
         new Thread(() -> exec()).start();
 
-        status = true;
         i = 99;
+        status = true;
     }
 }
