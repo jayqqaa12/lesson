@@ -31,4 +31,17 @@ public class OptionalTest {
                 .map(s -> null)//返回 null
                 .ifPresent(System.out::println);
     }
+
+  
+    @Test
+    public   void test2( ) {
+        System.out.println(Optional.ofNullable(new Person())
+            .map(x->x.country)
+            .map(x->x.provinec)
+            .map(x->x.city)
+            .map(x->x.name)
+            .orElse("unkonwn"));
+    }
+
+
 }

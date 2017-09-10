@@ -14,26 +14,66 @@ import static java.util.Arrays.asList;
  */
 public class ForEachTest {
 
-    private List<User> persons = asList(new User("Joe"), new User("Jim"), new User("John"));
-
+ 
 
     @Test
     public void old() {
         //外部循环
-        for (User p : persons) {
-            p.setPassword("Doe");
-        }
+      
+       for(int i = 1; i < 4; i++) {
+          System.out.print(i + "...");
+         }
+
     }
 
 
     @Test
     public void lambda() {
-        persons.forEach(p -> p.setPassword("Doe"));
+    
+    IntStream.range(1, 4)
+        .forEach(i -> System.out.print(i + "..."));
 
     }
 
 
 
+    public  void old2(){
+     
+     ExecutorService executorService = Executors.newFixedThreadPool(10);
+ 
+      for(int i = 0; i < 5; i++) {
+        int temp = i;
+ 
+        executorService.submit(new Runnable() {
+          public void run() {
+           
+            System.out.println("Running task " + temp); 
+          }
+        });
+      }
+ 
+      executorService.shutdown();
+ 
+    }
+
+
+      
+     public  void lambda2(){
+
+      ExecutorService executorService = Executors.newFixedThreadPool(10);
+                       
+     IntStream.range(0, 5)
+       .forEach(i -> 
+         executorService.submit(new Runnable() {
+           public void run() {
+             System.out.println("Running task " + i); 
+           }
+         }));
+ 
+     executorService.shutdown();
+
+
+     }
 
 
 }
