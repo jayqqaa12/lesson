@@ -1,12 +1,12 @@
 package com.jayqqaa12.concurrent.design;
 
-import com.jayqqaa12.ThreadSafe;
+import com.jayqqaa12.NotThreadSafe;
 
 
 /**
  * 同步
  */
-@ThreadSafe
+@NotThreadSafe
 public class SynchronizedRGB {
 
     // Values must be between 0 and 255.
