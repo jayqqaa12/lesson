@@ -14,13 +14,13 @@ public class LambdaTest {
     @Test
     public void test() {
 
-        Function<Object, Integer> function = (u) -> {
-            return new User().getAge();
+        Function<User, Integer> function = (u) -> {
+            return u.getAge();
         };
 
-        Function function2 = (Object u) -> new User().getAge();
+        Function function2 = (User u) -> u.getAge();
 
-        Function function3 =  u -> new User().getAge();
+        Function function3 =  u -> u.getAge();
 
         // 方法引用
         Function<User, Integer> function4 = User::getAge;
