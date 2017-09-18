@@ -1,5 +1,6 @@
 package com.jayqqaa12.jdk.func;
 
+import com.jayqqaa12.model.Person;
 import org.junit.Test;
 
 import java.util.Optional;
@@ -32,15 +33,12 @@ public class OptionalTest {
                 .ifPresent(System.out::println);
     }
 
-  
+
     @Test
-    public   void test2( ) {
+    public void test2() {
         System.out.println(Optional.ofNullable(new Person())
-            .map(x->x.country)
-            .map(x->x.provinec)
-            .map(x->x.city)
-            .map(x->x.name)
-            .orElse("unkonwn"));
+                .map(x -> x.emailAddress)
+                .orElse("unkonwn"));
     }
 
 

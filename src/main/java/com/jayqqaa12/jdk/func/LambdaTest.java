@@ -18,64 +18,67 @@ public class LambdaTest {
             return u.getAge();
         };
 
-        Function function2 = (User u) -> u.getAge();
+        Function<User, Integer> function2 = (User u) -> u.getAge();
 
-        Function function3 =  u -> u.getAge();
+        Function<User, Integer> function3 = u -> u.getAge();
 
         // 方法引用
         Function<User, Integer> function4 = User::getAge;
 
     }
 
-  
-    
+
     /**
-    *- 可以直接在lambda表达式中访问外层的局部变量 但不能修改
-    *- lambda方法参数也不能修改
-    **/
-   @Test
-   public void testFinal(){
- 
-    int num = 1;  
-    Converter<Integer, String> s =   (param) -> String.valueOf(param + num);  
-    //num = 5; 
+     * - 可以直接在lambda表达式中访问外层的局部变量 但不能修改
+     * - lambda方法参数也不能修改
+     **/
+    @Test
+    public void testFinal() {
+
+        int num = 1;
+        Function<Integer, String> converter = (param) -> String.valueOf(param);
+        num = 5;
+
+    }
+
+
+    static int myStaticNum;
+    int myNum;
+
+
+    /**
+     * - Lambda内部对于成员变量以及静态变量是即可读又可写
+     **/
+
+    @Test
+    public void testScopes() {
+        Function<Integer, String> s1 = (param) -> {
+            myNum = 33;
+            return String.valueOf(param);
+        };
+
+        Function<Integer, String> s2 = (param) -> {
+            myStaticNum = 87;
+            return String.valueOf(param);
+        };
+    }
 
 
 
-   }
 
 
-   static int myStaticNum;  
-    int myNum;  
 
-        /**
-    *- Lambda内部对于成员变量以及静态变量是即可读又可写
-    **/
-   
-    @Test 
-    public void testScopes() {  
-        Converter<Integer, String> s1 = (param) -> {  
-            myNum = 33;  
-            return String.valueOf(param);  
-        };  
-   
-        Converter<Integer, String> s2 = (param) -> {  
-            myStaticNum = 87;  
-            return String.valueOf(param);  
-        };  
-    }  
 
- 
- 
-     @Test 
-     public   void closure(String text,int count){  
-        Runnable r = () -> {  
-            for(int i = 0; i < count; i++){  
-                System.out.println(text);  
-                Thread.yield();  
-            }  
-        };  
-        new Thread(r).start();  
-    }  
+
+    @Test
+    public void closure(String text, int count) {
+        Runnable r = () -> {
+            for (int i = 0; i < count; i++) {
+                System.out.println(text);
+                Thread.yield();
+            }
+        };
+        new Thread(r).start();
+    }
 
 }

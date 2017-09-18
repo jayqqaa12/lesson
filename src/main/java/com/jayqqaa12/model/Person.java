@@ -1,12 +1,16 @@
+package com.jayqqaa12.model;
+
+import java.time.LocalDate;
+
 public class Person {
-    public enum Sex{
-        MALE,FEMALE
+    public enum Sex {
+        MALE, FEMALE
     }
 
-    String name;
-    LocalDate birthday;
-    Sex gender;
-    String emailAddress;
+    public String name;
+    public LocalDate birthday;
+    public Sex gender;
+    public String emailAddress;
 
     public String getEmailAddress() {
         return emailAddress;
@@ -24,7 +28,7 @@ public class Person {
         return name;
     }
 
-    public static int compareByAge(Person a,Person b){
+    public static int compareByAge(Person a, Person b) {
         return a.birthday.compareTo(b.birthday);
     }
 
