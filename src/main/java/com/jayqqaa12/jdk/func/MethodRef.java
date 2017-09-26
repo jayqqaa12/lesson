@@ -19,6 +19,7 @@ public class MethodRef {
             }
         });
 
+
         //使用lambda表达式
         Arrays.sort(persons, (o1, o2) -> o1.birthday.compareTo(o2.birthday));
 
@@ -71,15 +72,6 @@ public class MethodRef {
     }
 
 
-    public static <T, SOURCE extends Collection<T>, DEST extends Collection<T>>
-    DEST transferElements(SOURCE sourceColletions, Supplier<DEST> colltionFactory) {
-        DEST result = colltionFactory.get();
-        for (T t : sourceColletions) {
-            result.add(t);
-        }
-        return result;
-    }
-
     public void constuctRef() {
         final List<Person> personList = Arrays.asList(persons);
         //使用lambda表达式
@@ -87,6 +79,14 @@ public class MethodRef {
         //使用方法引用
         //引用的是构造方法
         Set<Person> personSet2 = transferElements(personList, HashSet::new);
+    }
+
+    public static <T, SOURCE extends Collection<T>, DEST extends Collection<T>>  DEST transferElements(SOURCE sourceColletions, Supplier<DEST> colltionFactory) {
+        DEST result = colltionFactory.get();
+        for (T t : sourceColletions) {
+            result.add(t);
+        }
+        return result;
     }
 
 

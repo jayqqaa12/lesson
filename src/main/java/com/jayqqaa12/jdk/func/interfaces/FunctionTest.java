@@ -1,4 +1,4 @@
-package com.jayqqaa12.jdk.func;
+package com.jayqqaa12.jdk.func.interfaces;
 
 import com.jayqqaa12.model.User;
 
@@ -9,7 +9,7 @@ import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 
-public class FunctionTest {
+public class  FunctionTest {
 
     public static void main(String[] args) {
         //初始化数据

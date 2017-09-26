@@ -1,4 +1,4 @@
-package com.jayqqaa12.jdk.func;
+package com.jayqqaa12.jdk.func.interfaces;
 
 import java.util.function.Consumer;
 
