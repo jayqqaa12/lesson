@@ -10,18 +10,19 @@ import java.util.Optional;
  */
 public class OptionalTest {
 
-    private static String print(String str) {
-        System.out.println(str);
-        return str.substring(6);
-    }
 
-    boolean checkNotNull(Object obj) {
-        return null == obj ? false : true;
-    }
-
+// if (person != null) {
+//     Country country = person.getCountry();
+//     if (country != null) {
+//         Province province = country.getProvince();
+//         if (province != null) {
+//             address = province.getCity();
+//         }
+//     }
+// }
 
     @Test
-    public void test() {
+     public void test() {
         final String text = "Hallo world!";
         Optional.ofNullable(text)//显示创建一个Optional壳
                 .map(OptionalTest::print)
@@ -29,17 +30,13 @@ public class OptionalTest {
 
         Optional.ofNullable(text)
                 .map(OptionalTest::print)
+                .filter((str)->str.contain("s"))
                 .map(s -> null)//返回 null
-                .ifPresent(System.out::println);
+                .orElse("is empty")
+                .orElseThrow(IllegalArgumentException::new);
     }
 
-
-    @Test
-    public void test2() {
-        System.out.println(Optional.ofNullable(new Person())
-                .map(x -> x.emailAddress)
-                .orElse("unkonwn"));
-    }
-
+      
+ 
 
 }
