@@ -1,4 +1,4 @@
-package com.jayqqaa12.jdk.func;
+package com.jayqqaa12.jdk.func.def;
 
 /**
  * 默认方法和 静态的方法
@@ -15,6 +15,8 @@ public interface DefaultMethod {
     default void testDefaultMethod() {
         System.out.println("default method call");
     }
+
+
 
 
     public static void main(String[] args) {

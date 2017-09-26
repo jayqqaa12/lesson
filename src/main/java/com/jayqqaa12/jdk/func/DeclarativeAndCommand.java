@@ -8,8 +8,7 @@ import java.util.List;
  ***/
 public class DeclarativeAndCommand {
     public static void main(String[] args) {
-        List<String> names =
-                Arrays.asList("Dory", "Gill", "Bruce", "Nemo", "Darla", "Marlin", "Jacques");
+        List<String> names = Arrays.asList("Dory", "Gill", "Bruce", "Nemo", "Darla", "Marlin", "Jacques");
 
         findNemo(names);
     }
