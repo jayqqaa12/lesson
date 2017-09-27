@@ -19,6 +19,7 @@ public class InstantTest {
         System.out.println(instant1.getEpochSecond());//精确到秒 得到相对于1970-01-01 00:00:00 UTC的一个时间
         System.out.println(instant1.toEpochMilli()); //精确到毫秒
 
+
         Clock clock1 = Clock.systemUTC(); //获取系统UTC默认时钟
         Instant instant2 = Instant.now(clock1);//得到时钟的瞬时时间
         System.out.println(instant2.toEpochMilli());

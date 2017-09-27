@@ -32,6 +32,7 @@ public class ForEachTest {
 
     }
 
+    @Test
     public void old2() {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
@@ -50,12 +51,12 @@ public class ForEachTest {
     }
 
 
+    @Test
     public void lambda2() {
 
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         IntStream.range(0, 5)
-                .forEach(i ->
-                        executorService.submit(new Runnable() {
+                .forEach(i -> executorService.submit(new Runnable() {
                             public void run() {
                                 System.out.println("Running task " + i);
                             }

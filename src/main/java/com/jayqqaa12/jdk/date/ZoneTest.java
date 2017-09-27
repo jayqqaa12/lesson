@@ -21,8 +21,6 @@ public class ZoneTest {
         ZonedDateTime now2= ZonedDateTime.now(ZoneId.of("Europe/Paris"));
         System.out.println(now2);
 
-//其他的用法也是类似的 就不介绍了
-
         ZonedDateTime z1 = ZonedDateTime.parse("2013-12-31T23:59:59Z[Europe/Paris]");
         System.out.println(z1);
     }

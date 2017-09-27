@@ -11,11 +11,19 @@ public class PeriodTest {
 
     @Test
     public void test(){
-        //周期，如表示10天前  3年5个月钱
+        //周期，如表示10天  3年5个月
 
         Period period1 = Period.ofDays(10);
         System.out.println(period1);
-        Period period2 = Period.of(3, 5, 0);
+
+
+
+        Period period2 = Period.of(3, 5, 1);
         System.out.println(period2);
+
+
+        System.out.println(period2.toTotalMonths());
+
+
     }
 }

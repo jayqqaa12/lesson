@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.time.chrono.ChronoLocalDateTime;
 import java.time.chrono.Chronology;
 import java.time.chrono.HijrahChronology;
+import java.time.chrono.IsoChronology;
 
 /**
  * Created by 12 on 2017/8/31.
@@ -18,7 +19,12 @@ public class ChronologyTest {
         //提供对java.util.Calendar的替换，提供对年历系统的支持
         Chronology c = HijrahChronology.INSTANCE;
         ChronoLocalDateTime d = c.localDateTime(LocalDateTime.now());
-
         System.out.println(d);
+
+        Chronology  c2 = IsoChronology.INSTANCE;
+        ChronoLocalDateTime  d2 = c2.localDateTime(LocalDateTime.now());
+        System.out.println(d2);
+
+
     }
 }

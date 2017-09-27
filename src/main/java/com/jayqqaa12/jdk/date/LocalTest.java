@@ -70,18 +70,4 @@ public class LocalTest {
     }
 
 
-    //LocalDate 即年月日 无时分秒
-    @Test
-    public void localData() {
-
-
-    }
-
-    //LocalTime即时分秒 无年月日
-
-    @Test
-    public void localTime() {
-
-    }
-
 }

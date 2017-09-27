@@ -1,6 +1,5 @@
 package com.jayqqaa12.jdk.func.interfaces;
 
-import com.jayqqaa12.model.Person;
 import org.junit.Test;
 
 import java.util.Optional;
@@ -25,14 +24,13 @@ public class OptionalTest {
      public void test() {
         final String text = "Hallo world!";
         Optional.ofNullable(text)//显示创建一个Optional壳
-                .map(OptionalTest::print)
+                .map(t->t.substring(5))
                 .ifPresent(System.out::println);
 
         Optional.ofNullable(text)
-                .map(OptionalTest::print)
-                .filter((str)->str.contain("s"))
+                .filter((str)->str.contains("s"))
                 .map(s -> null)//返回 null
-                .orElse("is empty")
+//                .orElse("is empty")
                 .orElseThrow(IllegalArgumentException::new);
     }
 

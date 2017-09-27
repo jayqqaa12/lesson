@@ -96,8 +96,8 @@ public class CollectorTest {
         List<User> userList = constructUserList();
 
         //1.maxBy求最大值
-        User user = userList.stream().collect(Collectors.collectingAndThen(
-                Collectors.maxBy((t1, t2) -> t1.getPassword().length() - t2.getPassword().length()), Optional::get));
+        User user = userList.stream().collect
+                (Collectors.collectingAndThen(Collectors.maxBy((t1, t2) -> t1.getPassword().length() - t2.getPassword().length()), Optional::get));
 
         //2.joining 合并，通过分隔符“,”合并用户名称
         String userName = userList.stream().map(User::getName).collect(Collectors.joining(","));

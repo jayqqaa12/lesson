@@ -105,8 +105,9 @@ public class StreamTest {
 
         Stream<User> allUserStream = Stream.of(clazz).flatMap(c -> c.getUsers().stream());
 
-        Optional<String> names = allUserStream.
-                map(User::getName).sorted((first, second) -> first.compareTo(second))
+        Optional<String> names = allUserStream
+                .map(User::getName)
+                .sorted((first, second) -> first.compareTo(second))
                 .reduce((first, second) -> first + " *** " + second);
 
         out.println(names.get());
@@ -134,16 +135,14 @@ public class StreamTest {
         flag = integerStream.map(x -> x * x).allMatch(x -> x == 81);
         flag = integerStream.map(x -> x * x).noneMatch(x -> x == 81);
 
-
     }
 
     @Test
     public void find() {
 
-        Optional<User> any = personStream.filter(p -> p.getAge() > 18).findAny();
+        Optional<User> any = personStream.unordered().filter(p -> p.getAge() > 18).findAny();
 
         Optional<User> first = personStream.filter(p -> p.getAge() > 18).findFirst();
-
 
     }
 
@@ -151,6 +150,8 @@ public class StreamTest {
     @Test
     public void parallel() {
         Stream steram = personStream.parallel();
+        // 再转换为顺序流
+        steram.sequential();
     }
 
 

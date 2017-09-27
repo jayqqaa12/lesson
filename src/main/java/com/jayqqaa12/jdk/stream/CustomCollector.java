@@ -79,7 +79,8 @@ public class CustomCollector {
                     if (builder.length() > 0) builder.append(",");
                     builder.append(name);
                     return builder;
-                }, (left, right) -> left.append(right)).insert(0, "[").append("]").toString();
+                }, (left, right) -> left.append(right)).insert(0, "[").append("]")
+                .toString();
     }
 
     /**
